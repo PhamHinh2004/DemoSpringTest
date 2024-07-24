@@ -1,3 +1,4 @@
+package Website;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.stream.Collectors;
@@ -18,23 +19,23 @@ import Website.TodoRepository;
 import Website.TodoService;
 
 
-@SpringBootTest
+@SpringBootTest(classes = {TodoServiceTest2.class, TestConfig.class})
 public class TodoServiceTest {
-//	@MockBean
-//	TodoRepository todoRepository;
-//
-//	@Autowired
-//	private TodoService todoService;
-//
-//	@BeforeEach
-//	public void setUp() {
-//		Mockito.when(todoRepository.findAll()).thenReturn(IntStream.range(0, 10)
-//				.mapToObj(i -> new Todo(i, "title-" + i, "detail-" + i)).collect(Collectors.toList()));
-//
-//	}
-//
-//	@Test
-//	public void testCount() {
-//		assertEquals(10, todoService.countTodo());
-//	}
+	@MockBean
+	TodoRepository todoRepository;
+
+	@Autowired
+	private TodoService todoService;
+
+	@BeforeEach
+	public void setUp() {
+		Mockito.when(todoRepository.findAll()).thenReturn(IntStream.range(0, 10)
+				.mapToObj(i -> new Todo(i, "title-" + i, "detail-" + i)).collect(Collectors.toList()));
+
+	}
+
+	@Test
+	public void testCount() {
+		assertEquals(10, todoService.countTodo());
+	}
 }
