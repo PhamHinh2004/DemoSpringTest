@@ -1,11 +1,20 @@
 package Website;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+@Entity
 @Data
 @AllArgsConstructor
 public class Todo {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public  int id;
 	public String title;
 	public String detail;
@@ -15,6 +24,13 @@ public class Todo {
 		this.title = title;
 		this.detail = detail;
 	}
+	
+	public Todo(String title, String detail) {
+		super();
+		this.title = title;
+		this.detail = detail;
+	}
+
 	public Todo() {
 		super();
 	}

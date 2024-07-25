@@ -10,15 +10,8 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
-import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.context.annotation.Bean;
 
-import Website.MayTinh;
-import Website.Todo;
-import Website.TodoRepository;
-import Website.TodoService;
 
 @SpringBootTest(classes = {TodoServiceTest2.class, TestConfig.class})
 	public class TodoServiceTest2 {
